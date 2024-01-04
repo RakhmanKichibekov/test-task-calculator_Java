@@ -82,18 +82,12 @@ public class Main {
     }
 
     static int choosingAnOperator(int firstOperand, int secondOperand, String operator) throws Exception {
-        int result;
-        if (operator.equals("+")) {
-            result = firstOperand + secondOperand;
-        } else if (operator.equals("-")) {
-            result = firstOperand - secondOperand;
-        } else if (operator.equals("*")) {
-            result = firstOperand * secondOperand;
-        } else if (operator.equals("/")) {
-            result = firstOperand / secondOperand;
-        } else {
-            throw new Exception("Неверная операция");
-        }
-        return result;
+        return switch (operator) {
+            case "+" -> firstOperand + secondOperand;
+            case "-" -> firstOperand - secondOperand;
+            case "*" -> firstOperand * secondOperand;
+            case "/" -> firstOperand / secondOperand;
+            default -> throw new Exception("Неверная операция");
+        };
     }
 }
