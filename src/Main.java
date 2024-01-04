@@ -22,7 +22,7 @@ public class Main {
         }
     }
 
-    static String arabicNumbers(String[] pieces) throws Exception {
+    private static String arabicNumbers(String[] pieces) throws Exception {
         int firstOperand = Integer.parseInt(pieces[0]);
         int secondOperand = Integer.parseInt(pieces[2]);
         String operator = pieces[1];
@@ -31,7 +31,7 @@ public class Main {
         return String.valueOf(result);
     }
 
-    static String romeNumbers(String[] pieces) throws Exception {
+    private static String romeNumbers(String[] pieces) throws Exception {
         String[] romeOperands = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String firstOperand = pieces[0];
         String secondOperand = pieces[2];
@@ -73,7 +73,7 @@ public class Main {
         return resultRome;
     }
 
-    static int choosingAnOperator(int firstOperand, int secondOperand, String operator) throws Exception {
+    private static int choosingAnOperator(int firstOperand, int secondOperand, String operator) throws Exception {
         return switch (operator) {
             case "+" -> firstOperand + secondOperand;
             case "-" -> firstOperand - secondOperand;
@@ -83,7 +83,7 @@ public class Main {
         };
     }
 
-    static void checkingTheNumbers(int firstOperand, int secondOperand) throws Exception {
+    private static void checkingTheNumbers(int firstOperand, int secondOperand) throws Exception {
         boolean a = (firstOperand >= 1 && firstOperand <= 10) && (secondOperand >= 1 && secondOperand <= 10);
         if (!a) {
             throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
