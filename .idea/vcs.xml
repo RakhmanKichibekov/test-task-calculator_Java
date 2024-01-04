@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Monopoly" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../prob/Monopoly1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../prob/cars-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../prob/pos" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../prob/social-cars" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../prob/team1_varant14" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../team1_varant14" vcs="Git" />
+  </component>
+</project>
