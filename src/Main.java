@@ -31,18 +31,7 @@ public class Main {
             throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
                     "и должен принимать на вход числа от 1 до 10 включительно, не более");
         }
-        int result;
-        if (operator.equals("+")) {
-            result = firstOperand + secondOperand;
-        } else if (operator.equals("-")) {
-            result = firstOperand - secondOperand;
-        } else if (operator.equals("*")) {
-            result = firstOperand * secondOperand;
-        } else if (operator.equals("/")) {
-            result = firstOperand / secondOperand;
-        } else {
-            throw new Exception("Неверная операция");
-        }
+        int result = choosingAnOperator(firstOperand, secondOperand, operator);
         return String.valueOf(result);
     }
 
@@ -66,18 +55,7 @@ public class Main {
             throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
                     " и должен принимать на вход числа от 1 до 10 включительно, не более");
         }
-        int result;
-        if (operator.equals("+")) {
-            result = k1 + k2;
-        } else if (operator.equals("-")) {
-            result = k1 - k2;
-        } else if (operator.equals("*")) {
-            result = k1 * k2;
-        } else if (operator.equals("/")) {
-            result = k1 / k2;
-        } else {
-            throw new Exception("Неверная операция");
-        }
+        int result = choosingAnOperator(k1, k2, operator);
         String resultRome = null;
         String[] romanNumerals = {
                 "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
@@ -101,5 +79,21 @@ public class Main {
             throw new Exception("Римские числа могут быть только >= 1");
         }
         return resultRome;
+    }
+
+    static int choosingAnOperator(int firstOperand, int secondOperand, String operator) throws Exception {
+        int result;
+        if (operator.equals("+")) {
+            result = firstOperand + secondOperand;
+        } else if (operator.equals("-")) {
+            result = firstOperand - secondOperand;
+        } else if (operator.equals("*")) {
+            result = firstOperand * secondOperand;
+        } else if (operator.equals("/")) {
+            result = firstOperand / secondOperand;
+        } else {
+            throw new Exception("Неверная операция");
+        }
+        return result;
     }
 }
