@@ -26,11 +26,7 @@ public class Main {
         int firstOperand = Integer.parseInt(pieces[0]);
         int secondOperand = Integer.parseInt(pieces[2]);
         String operator = pieces[1];
-        boolean a = (firstOperand >= 1 && firstOperand <= 10) && (secondOperand >= 1 && secondOperand <= 10);
-        if (!a) {
-            throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
-                    "и должен принимать на вход числа от 1 до 10 включительно, не более");
-        }
+        checkingTheNumbers(firstOperand, secondOperand);
         int result = choosingAnOperator(firstOperand, secondOperand, operator);
         return String.valueOf(result);
     }
@@ -50,11 +46,7 @@ public class Main {
                 k2 = i + 1;
             }
         }
-        boolean a = (k1 >= 1 && k1 <= 10) && (k2 >= 1 && k2 <= 10);
-        if (!a) {
-            throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
-                    " и должен принимать на вход числа от 1 до 10 включительно, не более");
-        }
+        checkingTheNumbers(k1, k2);
         int result = choosingAnOperator(k1, k2, operator);
         String resultRome = null;
         String[] romanNumerals = {
@@ -89,5 +81,13 @@ public class Main {
             case "/" -> firstOperand / secondOperand;
             default -> throw new Exception("Неверная операция");
         };
+    }
+
+    static void checkingTheNumbers(int firstOperand, int secondOperand) throws Exception {
+        boolean a = (firstOperand >= 1 && firstOperand <= 10) && (secondOperand >= 1 && secondOperand <= 10);
+        if (!a) {
+            throw new Exception("Калькулятор умеет работать только с арабскими или римскими цифрами одновременно" +
+                    " и должен принимать на вход числа от 1 до 10 включительно, не более");
+        }
     }
 }
